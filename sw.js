@@ -1,13 +1,9 @@
-const CACHE_NAME = 'sciverse-v2';
+const CACHE_NAME = 'sciverse-v3';
 const PRECACHE_URLS = [
     '/',
     '/index.html',
     '/manifest.json',
     '/icon.svg',
-    '/icon-192.png',
-    '/icon-512.png',
-    '/icon-maskable-192.png',
-    '/icon-maskable-512.png',
     '/screenshot-mobile.png',
     '/screenshot-web.png',
     '/school-logo.jpg'
