@@ -1,0 +1,62 @@
+{
+    "name": "SciVerse",
+    "short_name": "SciVerse",
+    "description": "An Interactive Digital Learning Material for High School Science Education based on the MATATAG Science Curriculum",
+    "start_url": "/",
+    "id": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "#0f2027",
+    "background_color": "#0f2027",
+    "categories": ["education", "kids"],
+    "lang": "en",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "screenshot-web.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "SciVerse Landing Page"
+        },
+        {
+            "src": "screenshot-mobile.png",
+            "sizes": "390x844",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "SciVerse on Mobile"
+        }
+    ]
+}
