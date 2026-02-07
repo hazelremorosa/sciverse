@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SciVerse - Application Report</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px 20px;
+                background: #fff;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+                padding-bottom: 20px;
+                border-bottom: 3px solid #2c5364;
+            }
+            .logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+            h1 {
+                font-size: 2.5rem;
+                color: #0f2027;
+                margin-bottom: 10px;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+                color: #666;
+                font-style: italic;
+            }
+            h2 {
+                font-size: 1.5rem;
+                color: #203a43;
+                margin: 30px 0 15px;
+                padding-bottom: 8px;
+                border-bottom: 2px solid #a8edea;
+            }
+            h3 {
+                font-size: 1.2rem;
+                color: #2c5364;
+                margin: 20px 0 10px;
+            }
+            p {
+                margin-bottom: 12px;
+                text-align: justify;
+            }
+            ul {
+                margin: 10px 0 15px 25px;
+            }
+            li {
+                margin-bottom: 8px;
+            }
+            .info-box {
+                background: #f0f9f8;
+                border-left: 4px solid #2c5364;
+                padding: 15px 20px;
+                margin: 20px 0;
+                border-radius: 0 8px 8px 0;
+            }
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin: 20px 0;
+            }
+            .stat-box {
+                background: linear-gradient(135deg, #0f2027, #2c5364);
+                color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+            }
+            .stat-number {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #a8edea;
+            }
+            .stat-label {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin: 20px 0;
+            }
+            .feature-card {
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                border: 1px solid #e0e0e0;
+            }
+            .feature-card h4 {
+                color: #2c5364;
+                margin-bottom: 8px;
+                font-size: 1rem;
+            }
+            .feature-card p {
+                font-size: 0.9rem;
+                margin: 0;
+            }
+            .curriculum-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            .curriculum-table th,
+            .curriculum-table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+            .curriculum-table th {
+                background: #2c5364;
+                color: #fff;
+            }
+            .curriculum-table tr:nth-child(even) {
+                background: #f8f9fa;
+            }
+            .tech-stack {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin: 15px 0;
+            }
+            .tech-tag {
+                background: #e8f4f3;
+                color: #2c5364;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                border: 1px solid #a8edea;
+            }
+            .footer {
+                margin-top: 50px;
+                padding-top: 20px;
+                border-top: 2px solid #eee;
+                text-align: center;
+                color: #666;
+                font-size: 0.9rem;
+            }
+            @media print {
+                body {
+                    padding: 20px;
+                }
+                .stat-box {
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="icon.svg" alt="SciVerse Logo" class="logo" />
+            <h1>SciVerse</h1>
+            <p class="subtitle">
+                An Interactive Digital Learning Material for High School Science
+                Education
+            </p>
+        </div>
+
+        <h2>Overview</h2>
+        <p>
+            SciVerse is a comprehensive, interactive web-based learning
+            application designed to support Grade 7-10 Science education in the
+            Philippines. Built as a Progressive Web Application (PWA), it
+            provides offline-capable access to curriculum-aligned content based
+            on the
+            <strong>MATATAG Science Curriculum 2023</strong> issued by the
+            Department of Education.
+        </p>
+
+        <div class="info-box">
+            <strong>Mission:</strong> To make quality science education
+            accessible, engaging, and effective for Filipino students through
+            interactive digital learning materials that bring scientific
+            concepts to life.
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Grade Levels</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">68</div>
+                <div class="stat-label">Lessons</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Quiz Questions</div>
+            </div>
+        </div>
+
+        <h2>Curriculum Coverage</h2>
+        <p>
+            SciVerse covers the complete MATATAG Science curriculum for Grades
+            7-10, organized into four quarters per grade level, each focusing on
+            a specific scientific domain.
+        </p>
+
+        <table class="curriculum-table">
+            <thead>
+                <tr>
+                    <th>Grade</th>
+                    <th>Q1</th>
+                    <th>Q2</th>
+                    <th>Q3</th>
+                    <th>Q4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Grade 7</strong></td>
+                    <td>Science of Materials</td>
+                    <td>Life Science</td>
+                    <td>Force, Motion & Energy</td>
+                    <td>Earth & Space Science</td>
+                </tr>
+                <tr>
+                    <td><strong>Grade 8</strong></td>
+                    <td>Life Science</td>
+                    <td>Science of Materials</td>
+                    <td>Earth & Space Science</td>
+                    <td>Force, Motion & Energy</td>
+                </tr>
+                <tr>
+                    <td><strong>Grade 9</strong></td>
+                    <td>Force, Motion & Energy</td>
+                    <td>Earth & Space Science</td>
+                    <td>Life Science</td>
+                    <td>Science of Materials</td>
+                </tr>
+                <tr>
+                    <td><strong>Grade 10</strong></td>
+                    <td>Earth & Space Science</td>
+                    <td>Force, Motion & Energy</td>
+                    <td>Science of Materials</td>
+                    <td>Life Science</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Key Features</h2>
+
+        <h3>Interactive Learning Tools</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Interactive Periodic Table</h4>
+                <p>
+                    Complete 118-element periodic table with detailed
+                    information, electron configurations, and category-based
+                    color coding.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Virtual Laboratories</h4>
+                <p>
+                    Simulated lab experiments including pH Testing Lab and
+                    Virtual Microscope for hands-on learning.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Animated Diagrams</h4>
+                <p>
+                    CSS-animated visualizations of scientific processes like the
+                    Water Cycle, Mitosis, and particle motion.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Interactive Simulations</h4>
+                <p>
+                    Force diagrams, Earth-Sun tilt models, and particle motion
+                    simulations with play/pause controls.
+                </p>
+            </div>
+        </div>
+
+        <h3>Assessment & Practice</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Lesson Quizzes</h4>
+                <p>
+                    Multiple-choice quizzes at the end of each lesson with
+                    instant feedback and score tracking.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Flashcard System</h4>
+                <p>
+                    Interactive flashcards for key terms and concepts with flip
+                    animations for self-review.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Scientific Glossary</h4>
+                <p>
+                    Comprehensive glossary of scientific terms with definitions,
+                    searchable and organized alphabetically.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Progress Tracking</h4>
+                <p>
+                    Track completed lessons and quiz scores with visual progress
+                    bars for each quarter.
+                </p>
+            </div>
+        </div>
+
+        <h3>Gamification System</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Achievement Badges</h4>
+                <p>
+                    20 unlockable badges across categories: Learning, Mastery,
+                    Exploration, and Dedication.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>XP & Levels</h4>
+                <p>
+                    Earn experience points for activities and level up through
+                    10 ranks from Novice to Science Master.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Study Streaks</h4>
+                <p>
+                    Daily streak tracking with calendar visualization to
+                    encourage consistent study habits.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Unlockable Themes</h4>
+                <p>
+                    Earn special color themes by reaching milestones and
+                    completing achievements.
+                </p>
+            </div>
+        </div>
+
+        <h3>Navigation & Accessibility</h3>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Global Search</h4>
+                <p>
+                    Search across all lessons and grades with instant
+                    suggestions and highlighted results.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Bookmarks</h4>
+                <p>
+                    Save favorite lessons for quick access later with persistent
+                    bookmark storage.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Font Size Controls</h4>
+                <p>
+                    Adjustable text size (small/medium/large) for comfortable
+                    reading.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>Keyboard Navigation</h4>
+                <p>
+                    Arrow key shortcuts for navigating between lessons within a
+                    quarter.
+                </p>
+            </div>
+        </div>
+
+        <h3>Additional Resources</h3>
+        <ul>
+            <li>
+                <strong>External Resource Links:</strong> Curated links to
+                educational videos and additional learning materials
+            </li>
+            <li>
+                <strong>"Did You Know?" Facts:</strong> Engaging science trivia
+                and fun facts throughout lessons
+            </li>
+            <li>
+                <strong>Real-World Applications:</strong> Connections between
+                scientific concepts and everyday life
+            </li>
+            <li>
+                <strong>Mind Maps:</strong> Visual concept maps showing
+                relationships between topics
+            </li>
+            <li>
+                <strong>Deep Linking:</strong> Share specific lessons via URL
+                for easy content sharing
+            </li>
+        </ul>
+
+        <h2>Technical Specifications</h2>
+
+        <h3>Technology Stack</h3>
+        <div class="tech-stack">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Vanilla JavaScript</span>
+            <span class="tech-tag">Progressive Web App</span>
+            <span class="tech-tag">Service Worker</span>
+            <span class="tech-tag">LocalStorage API</span>
+        </div>
+
+        <h3>Architecture</h3>
+        <ul>
+            <li>
+                <strong>Single-File Application:</strong> Entire app contained
+                in one HTML file (~29,000 lines) for easy deployment and offline
+                access
+            </li>
+            <li>
+                <strong>No External Dependencies:</strong> Zero runtime
+                dependencies - works without internet after initial load
+            </li>
+            <li>
+                <strong>SPA Navigation:</strong> Smooth section-based navigation
+                without page reloads
+            </li>
+            <li>
+                <strong>Responsive Design:</strong> Optimized for tablets and
+                desktop screens with mobile support
+            </li>
+        </ul>
+
+        <h3>PWA Capabilities</h3>
+        <ul>
+            <li>
+                <strong>Installable:</strong> Can be installed on devices as a
+                standalone application
+            </li>
+            <li>
+                <strong>Offline Support:</strong> Full functionality available
+                without internet connection
+            </li>
+            <li>
+                <strong>App-like Experience:</strong> Standalone display mode
+                with custom theme colors
+            </li>
+            <li>
+                <strong>Automatic Updates:</strong> Service worker handles cache
+                updates seamlessly
+            </li>
+        </ul>
+
+        <h3>Data Persistence</h3>
+        <ul>
+            <li>
+                <strong>Progress Data:</strong> Lesson completion and quiz
+                scores saved locally
+            </li>
+            <li>
+                <strong>Gamification Data:</strong> XP, levels, badges, and
+                streaks persisted across sessions
+            </li>
+            <li>
+                <strong>User Preferences:</strong> Font size, bookmarks, and
+                settings remembered
+            </li>
+        </ul>
+
+        <!-- <h2>Deployment</h2>
+    <div class="info-box">
+        <p><strong>Live URL:</strong> <a href="https://sciverse-dusky.vercel.app">https://sciverse-dusky.vercel.app</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/hazelremorosa/sciverse">https://github.com/hazelremorosa/sciverse</a></p>
+        <p><strong>Platform:</strong> Vercel (with automatic deployments from GitHub)</p>
+    </div> -->
+
+        <h2>Curriculum Alignment</h2>
+        <p>
+            All content is aligned with the
+            <strong>MATATAG Science Curriculum Guide 2023</strong>
+            (Final version for Grades 3-10) published by the Department of
+            Education, Republic of the Philippines. The application covers all
+            required competencies and learning objectives for each grade level
+            and quarter.
+        </p>
+
+        <div class="footer">
+            <p>&copy; 2026 SciVerse</p>
+            <p>Based on the MATATAG Science Curriculum</p>
+            <p>Developed for Bicol University</p>
+        </div>
+    </body>
+</html>

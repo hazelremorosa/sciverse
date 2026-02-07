@@ -2073,11 +2073,13 @@
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
-                padding: 0.5rem 0.75rem;
+                padding: 0.6rem 0.85rem;
                 background: rgba(132, 250, 176, 0.12);
                 border: 1px solid rgba(132, 250, 176, 0.25);
-                border-radius: 6px;
+                border-radius: 8px;
                 cursor: grab;
+                min-height: 44px;
+                touch-action: none;
                 transition: all 0.15s;
                 user-select: none;
             }
@@ -2145,11 +2147,20 @@
                 .ordering-slots {
                     max-width: 100%;
                 }
+                .ordering-slot {
+                    min-height: 52px;
+                    padding: 0.5rem;
+                }
                 .ordering-item {
-                    padding: 0.4rem 0.6rem;
+                    padding: 0.5rem 0.75rem;
+                    min-height: 48px;
                 }
                 .ordering-item-name {
-                    font-size: 0.7rem;
+                    font-size: 0.75rem;
+                }
+                .ordering-btn {
+                    min-height: 44px;
+                    padding: 0.6rem 1.25rem;
                 }
             }
 
@@ -2422,11 +2433,12 @@
                 background: rgba(253, 160, 133, 0.15);
                 border: 1px solid rgba(253, 160, 133, 0.3);
                 border-radius: 6px;
-                padding: 0.4rem 0.75rem;
-                font-size: 0.7rem;
+                padding: 0.5rem 0.85rem;
+                font-size: 0.75rem;
                 color: #fda085;
                 cursor: pointer;
                 transition: all 0.15s;
+                min-height: 40px;
                 font-family: inherit;
             }
             .force-preset-btn:hover {
@@ -2440,6 +2452,14 @@
                 .force-controls {
                     width: 100%;
                     max-width: 100%;
+                }
+                .force-preset-btn {
+                    min-height: 44px;
+                    padding: 0.6rem 1rem;
+                    font-size: 0.8rem;
+                }
+                .force-control input[type="range"] {
+                    height: 30px;
                 }
             }
 
@@ -2481,17 +2501,18 @@
             }
             .microscope-dropzone {
                 position: absolute;
-                min-width: 70px;
-                height: 24px;
+                min-width: 80px;
+                min-height: 36px;
                 background: rgba(168, 237, 234, 0.15);
                 border: 2px dashed rgba(168, 237, 234, 0.4);
-                border-radius: 4px;
-                font-size: 0.6rem;
+                border-radius: 6px;
+                font-size: 0.65rem;
                 color: rgba(255, 255, 255, 0.3);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: all 0.2s;
+                touch-action: none;
             }
             .microscope-dropzone.drag-over {
                 background: rgba(168, 237, 234, 0.3);
@@ -2539,13 +2560,17 @@
             .microscope-label {
                 background: rgba(168, 237, 234, 0.15);
                 border: 1px solid rgba(168, 237, 234, 0.3);
-                border-radius: 4px;
-                padding: 0.35rem 0.6rem;
-                font-size: 0.7rem;
+                border-radius: 6px;
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
                 color: #a8edea;
                 cursor: grab;
                 transition: all 0.15s;
                 user-select: none;
+                touch-action: none;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
             }
             .microscope-label:hover {
                 background: rgba(168, 237, 234, 0.25);
@@ -2597,6 +2622,20 @@
                 }
                 .microscope-labels {
                     max-width: 100%;
+                }
+                .microscope-dropzone {
+                    min-height: 44px;
+                    min-width: 90px;
+                    font-size: 0.7rem;
+                }
+                .microscope-label {
+                    min-height: 44px;
+                    padding: 0.6rem 1rem;
+                    font-size: 0.8rem;
+                }
+                .microscope-btn {
+                    min-height: 44px;
+                    padding: 0.6rem 1.25rem;
                 }
             }
 
@@ -4044,8 +4083,8 @@
                 background: rgba(86, 204, 242, 0.15);
                 border: 1px solid rgba(86, 204, 242, 0.3);
                 border-radius: 8px;
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
                 color: #56ccf2;
                 cursor: pointer;
                 transition: all 0.15s;
@@ -4053,6 +4092,7 @@
                 display: flex;
                 align-items: center;
                 gap: 0.4rem;
+                min-height: 44px;
             }
             .anim-btn:hover {
                 background: rgba(86, 204, 242, 0.25);
@@ -4422,6 +4462,13 @@
                 .wc-label {
                     font-size: 0.5rem;
                 }
+                .anim-btn {
+                    min-height: 44px;
+                    padding: 0.6rem 0.85rem;
+                }
+                .anim-speed-slider {
+                    height: 30px;
+                }
             }
 
             /* ===== VIRTUAL LAB: pH TESTING ===== */
@@ -4518,12 +4565,13 @@
                 white-space: nowrap;
             }
             .vlab-ph-litmus {
-                width: 30px;
+                width: 50px;
                 height: 80px;
-                border-radius: 3px;
+                border-radius: 6px;
                 position: relative;
                 cursor: pointer;
                 transition: all 0.3s;
+                min-width: 44px;
             }
             .vlab-ph-litmus.blue {
                 background: linear-gradient(
@@ -4854,10 +4902,12 @@
                 background: rgba(168, 237, 234, 0.15);
                 border: 1px solid rgba(168, 237, 234, 0.3);
                 border-radius: 6px;
-                padding: 0.4rem;
-                font-size: 0.7rem;
+                padding: 0.5rem 0.6rem;
+                font-size: 0.75rem;
                 color: #a8edea;
                 cursor: pointer;
+                min-height: 40px;
+                min-width: 50px;
                 transition: all 0.15s;
                 font-family: inherit;
             }
@@ -4914,8 +4964,28 @@
                     align-items: center;
                 }
                 .vlab-micro-viewer {
-                    width: 180px;
-                    height: 180px;
+                    width: 220px;
+                    height: 220px;
+                }
+                .vlab-ph-litmus {
+                    width: 60px;
+                    min-height: 80px;
+                }
+                .vlab-ph-strips {
+                    gap: 1rem;
+                }
+                .vlab-micro-mag-btn {
+                    min-height: 44px;
+                    padding: 0.6rem 0.75rem;
+                    font-size: 0.85rem;
+                }
+                .vlab-micro-focus-slider {
+                    height: 30px;
+                }
+                .vlab-ph-btn,
+                .vlab-micro-controls select {
+                    min-height: 44px;
+                    font-size: 0.85rem;
                 }
             }
 
