@@ -2976,8 +2976,44 @@
                     display: none;
                 }
                 .ptable-detail {
-                    min-width: 260px;
-                    max-width: 90vw;
+                    position: fixed;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: translateY(100%);
+                    min-width: 100%;
+                    max-width: 100%;
+                    border-radius: 16px 16px 0 0;
+                    padding: 1rem;
+                    padding-top: 0.5rem;
+                    max-height: 45vh;
+                    overflow-y: auto;
+                    transition: transform 0.25s ease-out;
+                }
+                .ptable-detail.open {
+                    transform: translateY(0);
+                    animation: none;
+                }
+                .ptable-detail::before {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 4px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 2px;
+                    margin: 0 auto 0.75rem;
+                }
+                .ptable-detail-header {
+                    gap: 0.75rem;
+                }
+                .ptable-detail-symbol {
+                    width: 56px;
+                    height: 56px;
+                }
+                .ptable-detail-close {
+                    top: 0.75rem;
+                    right: 0.75rem;
                 }
             }
 
