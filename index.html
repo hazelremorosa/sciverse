@@ -2640,56 +2640,24 @@
             }
 
             /* ===== INTERACTIVE PERIODIC TABLE ===== */
-            .ptable-overlay {
-                position: fixed;
-                inset: 0;
-                background: rgba(0, 0, 0, 0.85);
-                z-index: 2000;
-                display: none;
-                align-items: center;
-                justify-content: center;
-                padding: 1rem;
-                backdrop-filter: blur(8px);
+            /* Periodic Table Page */
+            .ptable-page-container {
+                padding: 1.5rem;
+                max-width: 1200px;
+                margin: 0 auto;
             }
-            .ptable-overlay.open {
-                display: flex;
-                animation: fadeIn 0.25s ease forwards;
-            }
-            .ptable-container {
-                background: rgba(15, 20, 30, 0.98);
-                border: 1px solid rgba(255, 255, 255, 0.15);
-                border-radius: 16px;
-                padding: 1.25rem;
-                max-width: 95vw;
-                max-height: 95vh;
-                overflow: auto;
-                position: relative;
-            }
-            .ptable-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-                padding-bottom: 0.75rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .ptable-title {
-                font-size: 1.1rem;
-                font-weight: 600;
+            .ptable-page-title {
+                font-size: 1.75rem;
+                font-weight: 700;
                 color: #fff;
+                text-align: center;
+                margin-bottom: 0.5rem;
             }
-            .ptable-close {
-                background: none;
-                border: none;
-                color: rgba(255, 255, 255, 0.5);
-                font-size: 1.5rem;
-                cursor: pointer;
-                padding: 0.25rem;
-                line-height: 1;
-                transition: color 0.2s;
-            }
-            .ptable-close:hover {
-                color: #fff;
+            .ptable-page-subtitle {
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.6);
+                text-align: center;
+                margin-bottom: 1.5rem;
             }
             .ptable-grid {
                 display: grid;
@@ -2955,12 +2923,113 @@
                     display: none;
                 }
             }
+            /* Mobile vertical list view */
+            .ptable-mobile-list {
+                display: none;
+            }
+            .ptable-category-group {
+                margin-bottom: 1rem;
+            }
+            .ptable-category-header {
+                font-size: 0.85rem;
+                font-weight: 600;
+                padding: 0.5rem 0.75rem;
+                margin-bottom: 0.5rem;
+                border-radius: 8px;
+                color: #fff;
+            }
+            .ptable-category-header.alkali { background: linear-gradient(135deg, #ff6b6b, #c0392b); }
+            .ptable-category-header.alkaline { background: linear-gradient(135deg, #ff9f43, #e67e22); }
+            .ptable-category-header.transition { background: linear-gradient(135deg, #54a0ff, #2e86de); }
+            .ptable-category-header.post-transition { background: linear-gradient(135deg, #5f27cd, #341f97); }
+            .ptable-category-header.metalloid { background: linear-gradient(135deg, #00d2d3, #01a3a4); }
+            .ptable-category-header.nonmetal { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
+            .ptable-category-header.halogen { background: linear-gradient(135deg, #feca57, #ff9f43); }
+            .ptable-category-header.noble { background: linear-gradient(135deg, #a55eea, #8854d0); }
+            .ptable-category-header.lanthanide { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+            .ptable-category-header.actinide { background: linear-gradient(135deg, #ff9ff3, #f368e0); }
+            .ptable-category-elements {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+            .ptable-list-element {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.6rem 0.75rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.15s;
+                min-height: 52px;
+            }
+            .ptable-list-element:hover,
+            .ptable-list-element:active {
+                background: rgba(255, 255, 255, 0.12);
+                transform: scale(1.02);
+            }
+            .ptable-list-symbol {
+                width: 40px;
+                height: 40px;
+                border-radius: 6px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                color: #fff;
+            }
+            .ptable-list-symbol.alkali { background: linear-gradient(135deg, #ff6b6b, #c0392b); }
+            .ptable-list-symbol.alkaline { background: linear-gradient(135deg, #ff9f43, #e67e22); }
+            .ptable-list-symbol.transition { background: linear-gradient(135deg, #54a0ff, #2e86de); }
+            .ptable-list-symbol.post-transition { background: linear-gradient(135deg, #5f27cd, #341f97); }
+            .ptable-list-symbol.metalloid { background: linear-gradient(135deg, #00d2d3, #01a3a4); }
+            .ptable-list-symbol.nonmetal { background: linear-gradient(135deg, #1dd1a1, #10ac84); }
+            .ptable-list-symbol.halogen { background: linear-gradient(135deg, #f368e0, #be2edd); }
+            .ptable-list-symbol.noble { background: linear-gradient(135deg, #48dbfb, #0abde3); }
+            .ptable-list-symbol.lanthanide { background: linear-gradient(135deg, #ff9ff3, #f368e0); }
+            .ptable-list-symbol.actinide { background: linear-gradient(135deg, #feca57, #ff9f43); }
+            .ptable-list-symbol .num {
+                font-size: 0.55rem;
+                opacity: 0.8;
+            }
+            .ptable-list-symbol .sym {
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 1;
+            }
+            .ptable-list-info {
+                flex: 1;
+                min-width: 0;
+            }
+            .ptable-list-name {
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: #fff;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .ptable-list-mass {
+                font-size: 0.65rem;
+                color: rgba(255, 255, 255, 0.5);
+            }
             @media (max-width: 600px) {
                 .ptable-container {
                     padding: 0.75rem;
                 }
                 .ptable-grid {
-                    grid-template-columns: repeat(18, minmax(16px, 1fr));
+                    display: none;
+                }
+                .ptable-mobile-list {
+                    display: block;
+                    max-height: calc(100vh - 180px);
+                    overflow-y: auto;
+                    padding-bottom: 1rem;
+                }
+                .ptable-category-elements {
+                    grid-template-columns: repeat(2, 1fr);
                 }
                 .ptable-element {
                     min-width: 16px;
@@ -8540,25 +8609,29 @@
                 color: rgba(58, 46, 34, 0.7);
             }
             /* Ivory theme - Periodic table */
-            body.theme-ivory .ptable-overlay {
-                background: rgba(245, 240, 232, 0.9);
-            }
-            body.theme-ivory .ptable-container {
-                background: rgba(255, 252, 248, 0.98);
-                border-color: rgba(58, 46, 34, 0.15);
-            }
-            body.theme-ivory .ptable-title {
+            body.theme-ivory .ptable-page-title {
                 color: #3a2e22;
             }
-            body.theme-ivory .ptable-close {
-                color: rgba(58, 46, 34, 0.4);
+            body.theme-ivory .ptable-page-subtitle {
+                color: rgba(58, 46, 34, 0.6);
             }
-            body.theme-ivory .ptable-close:hover {
-                color: #3a2e22;
-            }
-            body.theme-ivory .ptable-header,
             body.theme-ivory .ptable-legend {
                 border-color: rgba(58, 46, 34, 0.1);
+            }
+            body.theme-ivory .ptable-category-header {
+                color: #fff;
+            }
+            body.theme-ivory .ptable-list-element {
+                background: rgba(58, 46, 34, 0.05);
+            }
+            body.theme-ivory .ptable-list-element:hover {
+                background: rgba(58, 46, 34, 0.1);
+            }
+            body.theme-ivory .ptable-list-name {
+                color: #3a2e22;
+            }
+            body.theme-ivory .ptable-list-mass {
+                color: rgba(58, 46, 34, 0.5);
             }
             body.theme-ivory .ptable-legend-item {
                 color: rgba(58, 46, 34, 0.7);
@@ -12938,16 +13011,29 @@
             <span><kbd>→</kbd> Next</span>
         </div>
 
-        <!-- Interactive Periodic Table -->
-        <div class="ptable-overlay" id="ptable-overlay">
-            <div class="ptable-container">
-                <div class="ptable-header">
-                    <span class="ptable-title">Interactive Periodic Table</span>
-                    <button class="ptable-close" id="ptable-close">
-                        &times;
-                    </button>
+        <!-- Interactive Periodic Table Page -->
+        <section class="section hidden" id="periodic-table">
+            <div class="nav-bar">
+                <div class="nav-left">
+                    <div class="nav-logo" data-home title="Home">
+                        <span class="nav-logo-icon">&#x1F52C;</span>
+                        <span class="nav-logo-text">SciVerse</span>
+                    </div>
                 </div>
+                <div class="nav-icons">
+                    <button class="nav-icon-btn" title="Back" data-back="landing">&#8592;</button>
+                    <button class="nav-icon-btn" data-nav-achievements title="Achievements">&#127942;</button>
+                    <div class="nav-dropdown">
+                        <button class="nav-icon-btn" data-nav-settings title="Settings">&#9881;</button>
+                        <div class="nav-dropdown-content settings-dropdown"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ptable-page-container">
+                <h1 class="ptable-page-title">Interactive Periodic Table</h1>
+                <p class="ptable-page-subtitle">Tap any element to see its details</p>
                 <div class="ptable-grid" id="ptable-grid"></div>
+                <div class="ptable-mobile-list" id="ptable-mobile-list"></div>
                 <div class="ptable-legend">
                     <div class="ptable-legend-item">
                         <span
@@ -13080,9 +13166,7 @@
                         >Actinide
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="ptable-detail" id="ptable-detail">
+                <div class="ptable-detail" id="ptable-detail">
             <button class="ptable-detail-close" id="ptable-detail-close">
                 &times;
             </button>
@@ -13114,7 +13198,9 @@
                     <div class="value" id="detail-period"></div>
                 </div>
             </div>
-        </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Achievements Page -->
         <section class="section hidden" id="achievements">
@@ -14656,8 +14742,6 @@
                     actinide: "Actinide",
                 };
 
-                var overlay = document.getElementById("ptable-overlay");
-                var closeBtn = document.getElementById("ptable-close");
                 var grid = document.getElementById("ptable-grid");
                 var detail = document.getElementById("ptable-detail");
                 var detailClose = document.getElementById(
@@ -14752,6 +14836,70 @@
 
                 buildGrid();
 
+                // Build mobile list view (grouped by category)
+                function buildMobileList() {
+                    var mobileList = document.getElementById("ptable-mobile-list");
+                    if (!mobileList) return;
+
+                    var categories = [
+                        { key: "alkali", name: "Alkali Metals" },
+                        { key: "alkaline", name: "Alkaline Earth Metals" },
+                        { key: "transition", name: "Transition Metals" },
+                        { key: "post-transition", name: "Post-Transition Metals" },
+                        { key: "metalloid", name: "Metalloids" },
+                        { key: "nonmetal", name: "Reactive Nonmetals" },
+                        { key: "halogen", name: "Halogens" },
+                        { key: "noble", name: "Noble Gases" },
+                        { key: "lanthanide", name: "Lanthanides" },
+                        { key: "actinide", name: "Actinides" }
+                    ];
+
+                    mobileList.innerHTML = "";
+
+                    categories.forEach(function(cat) {
+                        var catElements = elements.filter(function(el) {
+                            return el.cat === cat.key;
+                        }).sort(function(a, b) { return a.n - b.n; });
+
+                        if (catElements.length === 0) return;
+
+                        var group = document.createElement("div");
+                        group.className = "ptable-category-group";
+
+                        var header = document.createElement("div");
+                        header.className = "ptable-category-header " + cat.key;
+                        header.textContent = cat.name + " (" + catElements.length + ")";
+                        group.appendChild(header);
+
+                        var elementsDiv = document.createElement("div");
+                        elementsDiv.className = "ptable-category-elements";
+
+                        catElements.forEach(function(el) {
+                            var item = document.createElement("div");
+                            item.className = "ptable-list-element";
+                            item.dataset.element = el.n;
+                            item.innerHTML =
+                                '<div class="ptable-list-symbol ' + el.cat + '">' +
+                                    '<span class="num">' + el.n + '</span>' +
+                                    '<span class="sym">' + el.s + '</span>' +
+                                '</div>' +
+                                '<div class="ptable-list-info">' +
+                                    '<div class="ptable-list-name">' + el.name + '</div>' +
+                                    '<div class="ptable-list-mass">' + el.mass + ' u</div>' +
+                                '</div>';
+                            item.addEventListener("click", function() {
+                                showDetail(el.n);
+                            });
+                            elementsDiv.appendChild(item);
+                        });
+
+                        group.appendChild(elementsDiv);
+                        mobileList.appendChild(group);
+                    });
+                }
+
+                buildMobileList();
+
                 // Show element detail
                 function showDetail(atomicNum) {
                     var el = elements.find(function (e) {
@@ -14800,32 +14948,18 @@
                     detail.classList.remove("open");
                 });
 
-                closeBtn.addEventListener("click", function () {
-                    overlay.classList.remove("open");
-                    detail.classList.remove("open");
-                });
-
-                overlay.addEventListener("click", function (e) {
-                    if (e.target === overlay) {
-                        overlay.classList.remove("open");
-                        detail.classList.remove("open");
-                    }
-                });
-
-                // Open from nav buttons
+                // Open from nav buttons - use showSection for page navigation
                 document.addEventListener("click", function (e) {
                     if (e.target.closest("[data-nav-ptable]")) {
-                        overlay.classList.add("open");
+                        showSection("periodic-table");
+                        window.location.hash = "periodic-table";
                     }
                 });
 
+                // Close detail on Escape key
                 document.addEventListener("keydown", function (e) {
-                    if (e.key === "Escape") {
-                        if (detail.classList.contains("open")) {
-                            detail.classList.remove("open");
-                        } else if (overlay.classList.contains("open")) {
-                            overlay.classList.remove("open");
-                        }
+                    if (e.key === "Escape" && detail.classList.contains("open")) {
+                        detail.classList.remove("open");
                     }
                 });
             })();
@@ -27396,10 +27530,12 @@
                     });
                 }
 
-                // Navigate to lesson from hash on page load
-                function goToLessonFromHash() {
+                // Navigate to page from hash on page load
+                function goToPageFromHash() {
                     var hash = window.location.hash.slice(1);
-                    if (hash && lessonData[hash]) {
+                    if (hash === "periodic-table") {
+                        showSection("periodic-table");
+                    } else if (hash && lessonData[hash]) {
                         // Simulate clicking on the lesson item
                         var lessonItem = document.querySelector(
                             '[data-lesson="' + hash + '"]',
@@ -27412,13 +27548,15 @@
 
                 // Check hash on page load
                 if (window.location.hash) {
-                    setTimeout(goToLessonFromHash, 100);
+                    setTimeout(goToPageFromHash, 100);
                 }
 
                 // Handle browser back/forward
                 window.addEventListener("hashchange", function () {
                     var hash = window.location.hash.slice(1);
-                    if (hash && lessonData[hash]) {
+                    if (hash === "periodic-table") {
+                        showSection("periodic-table");
+                    } else if (hash && lessonData[hash]) {
                         var lessonItem = document.querySelector(
                             '[data-lesson="' + hash + '"]',
                         );
@@ -27426,8 +27564,8 @@
                             lessonItem.click();
                         }
                     } else if (!hash) {
-                        // If hash is cleared, go back to grade selection
-                        showSection("grade-select");
+                        // If hash is cleared, go back to landing
+                        showSection("landing");
                     }
                 });
 
